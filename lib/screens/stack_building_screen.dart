@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'master_screen.dart';
 import '../utils/progress.dart';
 import 'learn_screen.dart';
-import 'array_animate_screen.dart';
+import 'stack_animate_screen.dart';
 
 
-class ArrayBuildingScreen extends StatelessWidget {
+class StackBuildingScreen extends StatelessWidget {
 
-  const ArrayBuildingScreen({super.key});
+  const StackBuildingScreen({super.key});
 
 
   @override
@@ -84,11 +84,11 @@ class ArrayBuildingScreen extends StatelessWidget {
 
   title: "MASTER",
 
-  subtitle: Progress.arrayAnimateCompleted
+  subtitle: Progress.stackAnimateCompleted
       ? "Practice & Challenges"
       : "Complete Animate First 🔒",
 
-  unlocked: Progress.arrayMasterUnlocked,
+  unlocked: Progress.stackMasterUnlocked,
 
   color: Colors.purple,
 
@@ -121,17 +121,17 @@ class ArrayBuildingScreen extends StatelessWidget {
 
                         floor: "Floor 2",
 
-                        title: "ANIMATE",
+                        title: "ANIMATE STACK",
 
-                        subtitle: Progress.arrayAnimateCompleted
+                        subtitle: Progress.stackAnimateCompleted
     ? "Completed ✅"
-    : Progress.arrayAnimateUnlocked
+    : Progress.stackAnimateUnlocked
         ? "Interactive Visualizations"
         : "Complete Learn First 🔒",
 
-unlocked: Progress.arrayAnimateUnlocked,
+unlocked: Progress.stackAnimateUnlocked,
 
-completed: Progress.arrayAnimateCompleted,
+completed: Progress.stackAnimateCompleted,
 
 
 
@@ -140,7 +140,7 @@ completed: Progress.arrayAnimateCompleted,
 
                         onTap:
 
-                        Progress.arrayAnimateUnlocked
+                        Progress.stackAnimateUnlocked
 
                             ?
 
@@ -155,7 +155,7 @@ completed: Progress.arrayAnimateCompleted,
 
                               builder:(context)=>
 
-                              const AnimateScreen(),
+                              const StackAnimateScreen(),
 
                             ),
 
@@ -197,7 +197,7 @@ completed: Progress.arrayAnimateCompleted,
 
                         subtitle:
 
-                        Progress.arrayLearnCompleted
+                        Progress.stackLearnCompleted
 
                             ?
 
@@ -214,7 +214,7 @@ completed: Progress.arrayAnimateCompleted,
 
                         completed:
 
-                        Progress.arrayLearnCompleted,
+                        Progress.stackLearnCompleted,
 
 
                         color: Colors.orange,

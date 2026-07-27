@@ -365,7 +365,7 @@ class _AnimateScreenState extends State<AnimateScreen> {
                     BoxShadow(
 
                       color:
-                          Colors.black.withOpacity(.08),
+                          Colors.black.withValues(alpha: .08),
 
                       blurRadius:
                           12,
