@@ -388,7 +388,7 @@ class _MasterScreenState extends State<MasterScreen>
 
             blurRadius: 18,
 
-            color: Colors.black.withOpacity(.08),
+            color: Colors.black.withValues(alpha: .08),
 
             offset: const Offset(0, 8),
 

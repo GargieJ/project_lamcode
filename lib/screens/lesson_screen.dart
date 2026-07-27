@@ -131,7 +131,7 @@ class LessonScreen extends StatelessWidget {
 
                   decoration: BoxDecoration(
 
-                    color:Colors.white.withOpacity(0.85),
+                    color:Colors.white.withValues(alpha: 0.85),
 
                     borderRadius:BorderRadius.circular(25),
 
@@ -140,7 +140,7 @@ class LessonScreen extends StatelessWidget {
 
                       BoxShadow(
 
-                        color:Colors.black.withOpacity(0.15),
+                        color:Colors.black.withValues(alpha: 0.15),
 
                         blurRadius:15,
 

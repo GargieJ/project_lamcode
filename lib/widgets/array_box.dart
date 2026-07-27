@@ -174,7 +174,7 @@ class ArrayBox extends StatelessWidget {
 
                   color:
 
-                  Colors.black.withOpacity(.3),
+                  Colors.black.withValues(alpha: .3),
 
                 )
 

@@ -189,7 +189,7 @@ extends State<CodeExplorerScreen> {
                           color:
                           selectedLine==index
                           ?
-                          Colors.blue.withOpacity(.3)
+                          Colors.blue.withValues(alpha: .3)
                           :
                           Colors.transparent,
 
