@@ -109,7 +109,7 @@ class LevelNode extends StatelessWidget {
                 BoxShadow(
 
 
-                  color: Colors.black.withOpacity(0.3),
+                  color: Colors.black.withValues(alpha: 0.3),
 
 
                   blurRadius:12,
@@ -218,7 +218,7 @@ class LevelNode extends StatelessWidget {
             decoration: BoxDecoration(
 
 
-              color: Colors.white.withOpacity(0.85),
+              color: Colors.white.withValues(alpha: 0.85),
 
 
 

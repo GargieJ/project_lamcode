@@ -65,7 +65,7 @@ class ExplanationCard extends StatelessWidget {
 
             color:
 
-            Colors.black.withOpacity(.15),
+            Colors.black.withValues(alpha: .15),
 
           )
 

@@ -7,6 +7,11 @@ class Progress {
   static bool arrayMasterUnlocked = false;
   static bool arrayMasterCompleted = false;
 
+ static bool stackLearnCompleted = false;
+  static bool stackAnimateUnlocked = false;
+  static bool stackAnimateCompleted = false;
+  static bool stackMasterUnlocked = false;
+
   static void markMasterCompleted() {
     arrayMasterCompleted = true;
   }

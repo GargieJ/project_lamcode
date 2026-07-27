@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/level_node.dart';
 import 'array_map_screen.dart';
-
+import 'stack_building_screen.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -131,34 +130,24 @@ class HomeScreen extends StatelessWidget {
 
 
           // Stacks
-
-          Positioned(
-
-            bottom: 400,
-
-            left: 130,
-
-
-            child: LevelNode(
-
-
-              title: "Stacks",
-
-              level: "3",
-
-              color: Colors.red,
-
-              unlocked: false,
-
-
-            ),
-
-
-          ),
-
-
-
-
+Positioned(
+  bottom: 400,
+  left: 130,
+  child: LevelNode(
+    title: "Stacks",
+    level: "3",
+    color: Colors.red,
+    unlocked: true,
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const StackBuildingScreen(),
+        ),
+      );
+    },
+  ),
+),
 
           // Queues
 

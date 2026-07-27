@@ -76,7 +76,7 @@ class LessonNode extends StatelessWidget {
 
                 BoxShadow(
 
-                  color: Colors.black.withOpacity(0.25),
+                  color: Colors.black.withValues(alpha: 0.25),
 
                   blurRadius:10,
 
@@ -146,7 +146,7 @@ class LessonNode extends StatelessWidget {
 
             decoration:BoxDecoration(
 
-              color:Colors.white.withOpacity(0.85),
+              color:Colors.white.withValues(alpha: 0.85),
 
               borderRadius:
 

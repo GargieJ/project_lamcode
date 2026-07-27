@@ -40,7 +40,7 @@ class LamBackground extends StatelessWidget {
             width: 220,
             height: 220,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(.08),
+              color: Colors.white.withValues(alpha: .08),
               shape: BoxShape.circle,
             ),
           ),
@@ -53,7 +53,7 @@ class LamBackground extends StatelessWidget {
             width: 260,
             height: 260,
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(.06),
+              color: Colors.white.withValues(alpha: .06),
               shape: BoxShape.circle,
             ),
           ),
