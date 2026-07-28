@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'master_screen.dart';
+import 'array_master_screen.dart';
 import '../utils/progress.dart';
 import 'array_learn_screen.dart';
 import 'array_animate_screen.dart';
@@ -96,7 +96,7 @@ class ArrayBuildingScreen extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => const MasterScreen(),
+        builder: (_) => const ArrayMasterScreen(),
       ),
     );
   },

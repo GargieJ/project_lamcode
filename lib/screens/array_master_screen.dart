@@ -8,16 +8,16 @@ import '../widgets/result_card.dart';
 import '../widgets/lesson_complete.dart';
 
 import '../utils/progress.dart';
-import 'array_building_screen.dart';
 
-class MasterScreen extends StatefulWidget {
-  const MasterScreen({super.key});
+class ArrayMasterScreen extends StatefulWidget {
+  const ArrayMasterScreen({super.key});
 
   @override
-  State<MasterScreen> createState() => _MasterScreenState();
+  State<ArrayMasterScreen> createState() =>
+      _MasterScreenState();
 }
 
-class _MasterScreenState extends State<MasterScreen>
+class _MasterScreenState extends State<ArrayMasterScreen>
     with SingleTickerProviderStateMixin {
 
   int currentQuestion = 0;
