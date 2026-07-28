@@ -71,30 +71,15 @@ class _StackAnimateScreenState extends State<StackAnimateScreen> {
                   const Text("Cancel"),
 
             ),
-
-
             ElevatedButton(
-
-              onPressed: () {
-                finishModule();
-              
-                Navigator.pop(
-
-                  context,
-
-                  int.tryParse(
-                    controller.text,
-                  ),
-
-                );
-
-              },
-
-
-              child:
-                  const Text("OK"),
-
-            ),
+               onPressed: () {
+               Navigator.pop(
+               context,
+               int.tryParse(controller.text),
+    );
+  },
+             child: const Text("OK"),
+)
 
           ],
 
@@ -106,22 +91,24 @@ class _StackAnimateScreenState extends State<StackAnimateScreen> {
 
   }
 
-
-
-
-  void createStack() async {
+ void createStack() async {
+  print("Create pressed");
 
   int? size = await askNumber(
     "Create Stack",
     "Enter stack size",
   );
 
+  print("Size = $size");
+
   if (size == null || size <= 0) return;
 
   setState(() {
-    stack = List.generate(size, (index) => null);
+    stack = List.generate(size, (_) => null);
     stackCreated = true;
   });
+
+  print(stack.length);
 }
 
 void pushValue() async {
