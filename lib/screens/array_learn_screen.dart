@@ -3,9 +3,9 @@ import 'array_code_explorer_screen.dart';
 
 
 
-class LearnScreen extends StatelessWidget {
+class ArrayLearnScreen extends StatelessWidget {
 
-  const LearnScreen({super.key});
+  const ArrayLearnScreen({super.key});
 
 
 

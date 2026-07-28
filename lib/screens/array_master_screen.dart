@@ -216,53 +216,22 @@ class _MasterScreenState extends State<MasterScreen>
 
   if (!mounted) return;
 
-  Navigator.pushReplacement(
-
+  Navigator.pushAndRemoveUntil(
     context,
-
     MaterialPageRoute(
-
       builder: (_) => LessonComplete(
-
         xp: xp,
-
         coins: coins,
-
-        accuracy:
-
-            correctAnswers *
-
-            100 /
-
-            arrayQuestions.length,
-
-        onContinue: () {
-
-          Navigator.pushAndRemoveUntil(
-
-            context,
-
-            MaterialPageRoute(
-
-              builder: (_) =>
-                  const ArrayBuildingScreen(),
-
-            ),
-
-            (route) => false,
-
-          );
-
-        },
-
+        accuracy: correctAnswers * 100 / arrayQuestions.length,
+        badgeName: "Array Explorer",
+        onContinue: () {},
       ),
-
     ),
-
+    (route) => false,
   );
-
 }
-    @override
+
+  @override
   Widget build(BuildContext context) {
 
     return Scaffold(

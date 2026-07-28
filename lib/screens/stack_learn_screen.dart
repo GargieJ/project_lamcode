@@ -9,73 +9,33 @@ class StackLearnScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
-
-
       appBar: AppBar(
-
         title: const Text(
-
           "Learn - Stack Creation",
-
         ),
-
         centerTitle: true,
-
       ),
-
-
-
-
       body: Container(
-
-
         width: double.infinity,
-
         height: double.infinity,
-
-
-
         decoration: const BoxDecoration(
-
-
           gradient: LinearGradient(
-
             colors: [
-
               Color(0xffe3f2fd),
-
               Color(0xfff1f8e9),
-
             ],
-
-
             begin: Alignment.topCenter,
-
             end: Alignment.bottomCenter,
-
           ),
-
         ),
-
-
-
-
-        child: Padding(
-
-          padding: const EdgeInsets.all(20),
-
-
-
-          child: Column(
-
-            crossAxisAlignment: CrossAxisAlignment.start,
-
-            children: [
-
-
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
 
               // TITLE
 
@@ -90,10 +50,8 @@ class StackLearnScreen extends StatelessWidget {
 
                   fontWeight:FontWeight.bold,
 
-                ),
-
-              ),
-
+                       ),
+      ),
 
 
 
@@ -261,156 +219,56 @@ Container(
 
 const SizedBox(height: 20),
 
-
-
               // NEXT BUTTON
-
-
               Align(
-
-
-                alignment:Alignment.centerRight,
-
-
-
-                child:SizedBox(
-
-
-                  width:65,
-
-                  height:65,
-
-
-
-                  child:FloatingActionButton(
-
-
-                    backgroundColor:Colors.orange,
-
-
-                    onPressed:(){
-
-
-
+                alignment: Alignment.centerRight,
+                child: SizedBox(
+                  width: 65,
+                  height: 65,
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.orange,
+                    onPressed: () {
                       Navigator.push(
-
-
                         context,
-
-
                         MaterialPageRoute(
-
-
-                          builder:(context)
-
-
-                          =>const StackCodeExplorerScreen(),
-
-
+                          builder: (context) =>
+                              const StackCodeExplorerScreen(),
                         ),
-
-
                       );
-
-
                     },
-
-
-
-
-                    child:const Icon(
-
-
+                    child: const Icon(
                       Icons.arrow_forward,
-
-
-                      size:35,
-
-
+                      size: 35,
                     ),
-
-
                   ),
-
-
-
                 ),
-
-
-              )
-
-
-
-
+              ),
             ],
-
-
           ),
-
-
         ),
-
-
-     ),
-
-
-    );
-
-
+      ),
+    ),
+  ),
+);
   }
-
-
-
-
 
   Widget stackCell(String value) {
     return Container(
-
-
-      width:55,
-
-      height:55,
-
-
-
-      alignment:Alignment.center,
-
-
-
-      decoration:BoxDecoration(
-
-        color:Colors.orange,
-
-        borderRadius:BorderRadius.circular(12),
-
+      width: 55,
+      height: 55,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: Colors.orange,
+        borderRadius: BorderRadius.circular(12),
       ),
-
-
-
-      child:Text(
-
+      child: Text(
         value,
-
-
-        style:const TextStyle(
-
-          color:Colors.white,
-
-          fontSize:20,
-
-          fontWeight:FontWeight.bold,
-
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
         ),
-
       ),
-
-
-
     );
-
-
   }
-
-
-
 }

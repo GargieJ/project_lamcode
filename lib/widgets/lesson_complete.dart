@@ -2,27 +2,31 @@ import 'package:flutter/material.dart';
 
 class LessonComplete extends StatelessWidget {
 
-  final int xp;
+ final int xp;
 
-  final int coins;
+final int coins;
 
-  final double accuracy;
+final double accuracy;
 
-  final VoidCallback onContinue;
+final String badgeName;
 
-  const LessonComplete({
+final VoidCallback onContinue;
 
-    super.key,
+const LessonComplete({
 
-    required this.xp,
+  super.key,
 
-    required this.coins,
+  required this.xp,
 
-    required this.accuracy,
+  required this.coins,
 
-    required this.onContinue,
+  required this.accuracy,
 
-  });
+  required this.badgeName,
+
+  required this.onContinue,
+
+});
 
   @override
   Widget build(BuildContext context) {
@@ -144,23 +148,14 @@ class LessonComplete extends StatelessWidget {
                         ),
 
                         const SizedBox(height: 18),
-
-                        const Text(
-
-                          "🏅 Array Explorer Badge Unlocked!",
-
+                         Text(
+                         "🏅 $badgeName Badge Unlocked!",
                           textAlign: TextAlign.center,
-
-                          style: TextStyle(
-
-                            fontSize: 18,
-
-                            color: Colors.green,
-
-                            fontWeight: FontWeight.bold,
-
-                          ),
-
+                          style: const TextStyle(
+                          fontSize: 18,
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                         ),
                         ),
 
                       ],

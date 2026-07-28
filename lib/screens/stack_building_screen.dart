@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'master_screen.dart';
+import 'stack_master_screen.dart';
 import '../utils/progress.dart';
-import 'array_learn_screen.dart';
+import 'stack_learn_screen.dart';
 import 'stack_animate_screen.dart';
 
 
@@ -96,7 +96,7 @@ class StackBuildingScreen extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => const MasterScreen(),
+        builder: (_) => const StackMasterScreen(),
       ),
     );
   },
@@ -231,7 +231,7 @@ completed: Progress.stackAnimateCompleted,
 
                               builder:(context)=>
 
-                              const LearnScreen(),
+                              const StackLearnScreen(),
 
                             ),
 

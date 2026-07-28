@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'master_screen.dart';
 import '../utils/progress.dart';
-import 'learn_screen.dart';
+import 'array_learn_screen.dart';
 import 'array_animate_screen.dart';
 
 
@@ -231,7 +231,7 @@ completed: Progress.arrayAnimateCompleted,
 
                               builder:(context)=>
 
-                              const LearnScreen(),
+                              const ArrayLearnScreen(),
 
                             ),
 
