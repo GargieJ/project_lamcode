@@ -1,4 +1,8 @@
 class Progress {
+  // =========================
+  // ARRAY PROGRESS
+  // =========================
+
   static bool arrayLearnCompleted = false;
 
   static bool arrayAnimateUnlocked = false;
@@ -7,12 +11,44 @@ class Progress {
   static bool arrayMasterUnlocked = false;
   static bool arrayMasterCompleted = false;
 
- static bool stackLearnCompleted = false;
-  static bool stackAnimateUnlocked = false;
-  static bool stackAnimateCompleted = false;
-  static bool stackMasterUnlocked = false;
-
   static void markMasterCompleted() {
     arrayMasterCompleted = true;
   }
+
+  // =========================
+  // LINKED LIST PROGRESS
+  // =========================
+
+  static bool linkedListLearnCompleted = false;
+
+  static bool linkedListAnimateUnlocked = false;
+  static bool linkedListAnimateCompleted = false;
+
+  static bool linkedListMasterUnlocked = false;
+  static bool linkedListMasterCompleted = false;
+
+  static void markLinkedListLearnCompleted() {
+    linkedListLearnCompleted = true;
+    linkedListAnimateUnlocked = true;
+  }
+
+  static void markLinkedListAnimateCompleted() {
+    linkedListAnimateCompleted = true;
+    linkedListMasterUnlocked = true;
+  }
+
+  static void markLinkedListMasterCompleted() {
+    linkedListMasterCompleted = true;
+  }
+
+  // =========================
+  // STACK PROGRESS
+  // =========================
+
+  static bool stackLearnCompleted = false;
+
+  static bool stackAnimateUnlocked = false;
+  static bool stackAnimateCompleted = false;
+
+  static bool stackMasterUnlocked = false;
 }
