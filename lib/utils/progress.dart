@@ -46,9 +46,7 @@ class Progress {
   // =========================
 
   static bool stackLearnCompleted = false;
-
   static bool stackAnimateUnlocked = false;
   static bool stackAnimateCompleted = false;
-
   static bool stackMasterUnlocked = false;
 }

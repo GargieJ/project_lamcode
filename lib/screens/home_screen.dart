@@ -13,7 +13,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Silicon Valley map background
           Image.asset(
             "lib/assets/silicon_valley_map.png",
             width: double.infinity,
