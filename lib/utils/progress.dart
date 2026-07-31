@@ -49,4 +49,19 @@ class Progress {
   static bool stackAnimateUnlocked = false;
   static bool stackAnimateCompleted = false;
   static bool stackMasterUnlocked = false;
+  static bool stackMasterCompleted = false;
+
+  static void markStackLearnCompleted() {
+    stackLearnCompleted = true;
+    stackAnimateUnlocked = true;
+  }
+
+  static void markStackAnimateCompleted() {
+    stackAnimateCompleted = true;
+    stackMasterUnlocked = true;
+  }
+
+  static void markStackMasterCompleted() {
+    stackMasterCompleted = true;
+  }
 }

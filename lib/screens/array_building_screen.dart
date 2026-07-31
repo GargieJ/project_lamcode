@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'master_screen.dart';
+
+import 'array/master_screen.dart';
 import '../utils/progress.dart';
-import 'learn_screen.dart';
-import 'array_animate_screen.dart';
+import 'array/learn_screen.dart';
+import 'array/animate_screen.dart';
 
 
 class ArrayBuildingScreen extends StatelessWidget {
