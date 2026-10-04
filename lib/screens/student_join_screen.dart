@@ -1,0 +1,223 @@
+import 'package:flutter/material.dart';
+
+import '../utils/professor_access.dart';
+
+class StudentJoinScreen extends StatefulWidget {
+  const StudentJoinScreen({super.key});
+
+  @override
+  State<StudentJoinScreen> createState() => _StudentJoinScreenState();
+}
+
+class _StudentJoinScreenState extends State<StudentJoinScreen> {
+  final _controller = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+  bool _isSubmitting = false;
+
+  Future<void> _submit() async {
+    if (!_formKey.currentState!.validate()) {
+      return;
+    }
+
+    setState(() => _isSubmitting = true);
+
+    try {
+      final code = _controller.text.trim();
+      final isValid = await ProfessorAccessManager.isValidProfessorCode(code);
+
+      if (!isValid) {
+        if (!mounted) return;
+        showDialog(
+          context: context,
+          builder: (_) => AlertDialog(
+            title: const Text('Invalid professor code'),
+            content: const Text('Invalid or missing professor verification code.'),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text('OK'),
+              ),
+            ],
+          ),
+        );
+        return;
+      }
+
+      if (!mounted) return;
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => StudentAccessApprovedScreen(code: code),
+        ),
+      );
+    } finally {
+      if (mounted) {
+        setState(() => _isSubmitting = false);
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF0B1020),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text('Join class', style: TextStyle(color: Colors.white)),
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Enter your professor verification code',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Ask your professor for the class code or join link they shared.',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 16,
+                    height: 1.5,
+                  ),
+                ),
+                const SizedBox(height: 28),
+                TextFormField(
+                  controller: _controller,
+                  style: const TextStyle(color: Colors.white),
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white.withOpacity(0.07),
+                    hintText: 'e.g. PROF-ABC123',
+                    hintStyle: const TextStyle(color: Colors.white54),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(16),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return 'Invalid or missing professor verification code.';
+                    }
+                    return null;
+                  },
+                ),
+                const Spacer(),
+                SizedBox(
+                  width: double.infinity,
+                  height: 54,
+                  child: ElevatedButton(
+                    onPressed: _isSubmitting ? null : _submit,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    child: _isSubmitting
+                        ? const SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : const Text(
+                            'Join',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class StudentAccessApprovedScreen extends StatelessWidget {
+  final String code;
+
+  const StudentAccessApprovedScreen({
+    super.key,
+    required this.code,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFF0B1020),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Icons.check_circle, color: Colors.green, size: 72),
+              const SizedBox(height: 20),
+              const Text(
+                'Access approved',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                'Verification code: $code',
+                style: const TextStyle(
+                  color: Colors.white70,
+                  fontSize: 16,
+                ),
+              ),
+              const SizedBox(height: 28),
+              SizedBox(
+                width: double.infinity,
+                height: 52,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.popUntil(context, (route) => route.isFirst);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                  child: const Text('Done'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
