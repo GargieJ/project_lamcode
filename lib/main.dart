@@ -1,32 +1,19 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
 
+import 'screens/auth_choice_screen.dart';
 
-void main(){
-
-  runApp(
-    const LamCode()
-  );
-
+void main() {
+  runApp(const LamCode());
 }
 
-
-class LamCode extends StatelessWidget{
-
+class LamCode extends StatelessWidget {
   const LamCode({super.key});
 
-
   @override
-  Widget build(BuildContext context){
-
+  Widget build(BuildContext context) {
     return MaterialApp(
-
-      debugShowCheckedModeBanner:false,
-
-      home: HomeScreen(),
-
+      debugShowCheckedModeBanner: false,
+      home: const AuthChoiceScreen(),
     );
-
   }
-
 }
